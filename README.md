@@ -7,6 +7,10 @@
    + Supporting formats: 
      + **2D formats: JPG, PNG, BMP.** 
      + **3D formats: .nrrd, .nii, .nii.gz, .dcm**
-   + Example usage: 
-     + 2D image: **MedImg2Raw /home/ultrast-s1/testImage.png**, results will be saved to the same path, with the file same name (extension: .raw). Spatial information will be printed on the screen. 
-     + 3D image: **MedImg2Raw /home/ultrast-s1/testImage.nrrd**, results will be saved to the same path, with the file same name (extension: .raw). Spatial information will be printed on the screen. 
++ Example usage: 
+   + 2D image: 
+     > **MedImg2Raw /home/ultrast-s1/testImage.png**
+   + 3D image: 
+     > **MedImg2Raw /home/ultrast-s1/testImage.nrrd**
+     
+    + Result (.raw) will be saved to the same path. Spatial information will be printed on the screen. 
