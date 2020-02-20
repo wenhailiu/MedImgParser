@@ -58,3 +58,5 @@ add_library(
 
 add_executable(MedImg2Raw MedImg2Raw.cpp)
 target_link_libraries(MedImg2Raw MedImgParser)
+# add_executable(test test.cpp)
+# target_link_libraries(test MedImgParser)

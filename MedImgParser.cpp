@@ -56,6 +56,10 @@ bool read_nii
         std::copy((short*)niiImage->data, (short*)niiImage->data + niiImage->nvox, ImageBuff.begin()); 
         break;
 
+    case DT_UINT16:
+        std::copy((uint16_t*)niiImage->data, (uint16_t*)niiImage->data + niiImage->nvox, ImageBuff.begin()); 
+        break;
+
     case DT_INT32:
         std::copy((int*)niiImage->data, (int*)niiImage->data + niiImage->nvox, ImageBuff.begin()); 
         break;
@@ -70,6 +74,20 @@ bool read_nii
     }
 
     delete niiImage; 
+
+    //correct the vertical convention: 
+    std::vector<float> ImageBuff_Correct(dimX * dimY * dimZ, 0.0f); 
+    for(int idxZ = 0; idxZ < dimZ; ++idxZ){
+        for(int idxY = 0; idxY < dimY; ++idxY){
+            std::copy(
+                ImageBuff.begin() + (dimX * dimY * idxZ + (dimX * dimY) - (idxY + 1) * dimX),  
+                ImageBuff.begin() + (dimX * dimY * idxZ + (dimX * dimY) - (idxY) * dimX), 
+                ImageBuff_Correct.begin() + (dimX * dimY * idxZ + idxY * dimX)
+            ); 
+        }
+    }
+
+    std::copy(ImageBuff_Correct.begin(), ImageBuff_Correct.end(), ImageBuff.begin()); 
 
     return true; 
 }
