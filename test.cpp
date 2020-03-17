@@ -17,7 +17,7 @@ int main(int argc, char *argv[]){
 
     // MedImageParser::read_nrrd("/home/wenhai/img_registration_ws/3d_FUSION_DATA/Origin/Ultrasound.nrrd", dimX, dimY, dimZ, spacingX, spacingY, spacingZ, originX, originY, originZ, data); 
 
-    MedicalImageIO imageIO("/home/wenhai/data/Registration/group2/06/correct_nii/06a_us_tal.nii"); 
+    MedicalImageIO imageIO("/home/wenhai/data/Registration/ImplementedResults/06a_us_tal_origin.nrrd"); 
     if(imageIO.ReadableCheck()){
         imageIO.Read(); 
         imageIO.DumpInfo(); 

@@ -457,3 +457,15 @@ void MedicalImageIO::GetOrigin(float _origin[3]){
     _origin[1] = origin[1]; 
     _origin[2] = origin[2]; 
 }
+
+float* MedicalImageIO::GetRawBuffer(){
+    return dataBuffer.data(); 
+}
+
+std::string MedicalImageIO::GetFileExtension(){
+    return fileExtension; 
+}
+
+std::string MedicalImageIO::GetFileName(){
+    return fileName; 
+}

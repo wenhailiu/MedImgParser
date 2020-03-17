@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.8)
 project(MedImgParser)
 
+#enable c++11
+set(CMAKE_CXX_STANDARD 11)
+
 include_directories(nifti/)
 include_directories(DICOMParser/src/)
 
@@ -56,7 +59,7 @@ add_library(
     ${NRRD_SOURCES}
 )
 
-add_executable(MedImg2Raw MedImg2Raw.cpp)
-target_link_libraries(MedImg2Raw MedImgParser)
-# add_executable(test test.cpp)
-# target_link_libraries(test MedImgParser)
+# add_executable(MedImg2Raw MedImg2Raw.cpp)
+# target_link_libraries(MedImg2Raw MedImgParser)
+add_executable(test test.cpp)
+target_link_libraries(test MedImgParser)

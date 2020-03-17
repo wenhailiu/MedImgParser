@@ -61,6 +61,9 @@ public:
     void GetSpacing(float _spacing[3]); 
     void GetOrigin(float& originX, float& originY, float& originZ); 
     void GetOrigin(float _origin[3]); 
+    float* GetRawBuffer(); 
+    std::string GetFileExtension(); 
+    std::string GetFileName(); 
 
 private: 
     //geometry parameter: 
